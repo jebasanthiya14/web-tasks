@@ -1,0 +1,60 @@
+/* High-Contrast Navbar Styling */
+.navbar {
+  background-color: #000000 !important; /* Pure black */
+  padding: 12px 20px;
+  border-bottom: 2px solid #00eaff; /* Neon Blue underline */
+}
+
+/* Brand (Website Name) */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: #00eaff !important;
+  text-shadow: 0 0 8px #00eaff;
+}
+
+/* Navbar links */
+.nav-link {
+  font-size: 17px;
+  font-weight: 500;
+  color: #ffffff !important;
+  padding: 8px 15px;
+  transition: 0.3s ease-in-out;
+  border-radius: 8px;
+}
+
+/* Hover Effect */
+.nav-link:hover {
+  background-color: #00eaff;
+  color: #000000 !important;
+  box-shadow: 0px 0px 10px #00eaff;
+  transform: translateY(-2px);
+}
+
+/* Active highlight */
+.nav-link.active {
+  color: #00eaff !important;
+  border-bottom: 2px solid #00eaff;
+}
+
+/* Hamburger Icon Custom Color */
+.navbar-toggler {
+  border-color: #00eaff !important;
+  box-shadow: 0 0 5px #00eaff;
+}
+
+.navbar-toggler-icon {
+  filter: invert(63%) sepia(91%) saturate(6190%) hue-rotate(165deg)
+    brightness(106%) contrast(106%);
+}
+
+/* Mobile menu background */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background-color: #000000;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #00eaff;
+  }
+}
