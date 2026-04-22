@@ -1,0 +1,117 @@
+
+:root{
+  --bg: #fffaf6;
+  --card: #fff6ef;
+  --accent: #ff6b6b;
+  --accent2: #ff9f43;
+  --note: #f7e6e6;
+  --muted: #6b7178;
+  --ink: #2b2b2b;
+  --green: #3ddc84;
+  --radius: 12px;
+  --maxw: 1100px;
+}
+
+/* Reset */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:linear-gradient(180deg,var(--bg),#fff3ea);
+  color:var(--ink);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  -webkit-font-smoothing:antialiased;
+  padding:24px;
+  display:flex;
+  justify-content:center;
+}
+
+/* App container */
+.app{
+  width:100%;
+  max-width:var(--maxw);
+  background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.95));
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(20,20,30,0.08);
+  overflow:hidden;
+}
+
+/* Header */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 22px;
+  border-bottom:1px dashed rgba(0,0,0,0.05);
+}
+.title h1{margin:0;font-size:20px;color:var(--accent)}
+.title .subtitle{margin:4px 0 0 0;color:var(--muted);font-size:13px}
+.today-box{
+  background:linear-gradient(180deg,#fff,#fff0f0);
+  padding:8px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.04);
+  text-align:center;
+}
+.today-box strong{display:block;font-size:12px;color:var(--muted)}
+#todayCount{font-size:18px;font-weight:700;color:var(--accent2)}
+
+/* Tabs */
+.tabs{display:flex;gap:6px;padding:12px 18px;background:transparent}
+.tab{
+  border:1px solid rgba(0,0,0,0.05);
+  background:linear-gradient(180deg,#fff,#fff7f5);
+  padding:8px 12px;border-radius:10px;font-weight:600;color:var(--muted);
+  cursor:pointer;
+}
+.tab.active{border-color:var(--accent2);color:var(--accent);box-shadow:0 4px 12px rgba(255,159,67,0.06)}
+
+/* Main layout */
+.main{display:flex;gap:18px;padding:18px}
+.panel{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.03)}
+.left{width:360px;flex-shrink:0}
+.right{flex:1;min-height:300px}
+
+/* Inputs */
+.add-section label, .scheduler label{display:block;margin-bottom:8px;font-size:13px;color:var(--muted)}
+.add-section input[type="text"], .add-section input[type="date"], .add-section select, .scheduler input[type="text"], .scheduler input[type="date"], .scheduler input[type="number"]{
+  width:100%;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);margin-top:6px;font-size:14px;
+}
+
+/* Buttons */
+.btn{padding:8px 12px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);cursor:pointer;background:#fff;font-weight:700}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border:none}
+.btn.ghost{background:transparent}
+.btn.small{padding:6px 8px;font-size:13px}
+.row{display:flex;gap:8px}
+
+/* Task list */
+.task-list{list-style:none;padding:0;margin:0}
+.task-item{
+  display:flex;align-items:center;justify-content:space-between;padding:10px;border-radius:10px;margin-bottom:10px;
+  background:linear-gradient(180deg,#fff,#fff7f2);border:1px solid rgba(0,0,0,0.03)
+}
+.task-left{display:flex;gap:10px;align-items:center;flex:1}
+.checkbox{width:18px;height:18px;border-radius:4px;border:2px solid rgba(0,0,0,0.08);display:inline-block;cursor:pointer;flex-shrink:0}
+.checkbox.checked{background:linear-gradient(90deg,var(--green),#16a34a);border-color:transparent}
+.task-meta{font-size:13px;color:var(--muted)}
+.task-title{font-weight:700}
+.task-date{font-size:12px;color:var(--muted)}
+.task-actions button{background:transparent;border:none;color:var(--muted);cursor:pointer}
+
+/* Color-coded by section */
+.task-item[data-section="assign"]{border-left:6px solid #ffa8a8}
+.task-item[data-section="absent"]{border-left:6px solid #ffb86b}
+.task-item[data-section="study"]{border-left:6px solid #7bd389}
+.task-item[data-section="health"]{border-left:6px solid #9fb6ff}
+
+/* Completed look */
+.task-item.completed{opacity:0.55;text-decoration:line-through}
+
+/* Small screens */
+@media (max-width:880px){
+  .main{flex-direction:column}
+  .left{width:100%}
+  .right{width:100%}
+}
+
+/* Footer */
+.footer{padding:12px 18px;border-top:1px dashed rgba(0,0,0,0.04);text-align:center;color:var(--muted)}
+.hint{font-size:12px;color:var(--muted);margin-top:8px}
