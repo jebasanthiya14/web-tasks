@@ -1,0 +1,47 @@
+/* Full page styling */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(45deg, #000, #111);
+  transition: background 0.8s ease;
+}
+
+/* Container */
+.container {
+  text-align: center;
+}
+
+/* Button styling - neon high contrast */
+#colorBtn {
+  padding: 20px 40px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #00eaff;
+  background-color: #000;
+  border: 3px solid #00eaff;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00eaff, 0 0 30px #00eaff inset;
+  transition: 0.3s ease-in-out;
+}
+
+/* Hover effect */
+#colorBtn:hover {
+  background-color: #00eaff;
+  color: #000;
+  box-shadow: 0 0 30px #00eaff, 0 0 50px #00eaff inset;
+  transform: translateY(-3px);
+}
+
+/* Display color codes */
+#colorCode {
+  margin-top: 15px;
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 0 0 5px #000;
+}
