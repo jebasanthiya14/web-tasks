@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>College Diary — Smart ToDo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="title">
+        <h1>College Diary 📝</h1>
+        <p class="subtitle">Anna University, Guindy — Your daily planner</p>
+      </div>
+
+      <div class="today-box" id="todayBox">
+        <strong>Today's Tasks</strong>
+        <div id="todayCount">0</div>
+      </div>
+    </header>
+
+    <nav class="tabs">
+      <button data-tab="absent" class="tab active">Absent</button>
+      <button data-tab="assign" class="tab">Assignments</button>
+      <button data-tab="study" class="tab">Study Planner</button>
+      <button data-tab="health" class="tab">Health</button>
+      <button data-tab="all" class="tab">All Tasks</button>
+    </nav>
+
+    <main class="main">
+      <!-- LEFT: input + controls -->
+      <aside class="panel left">
+        <section class="add-section" id="addSection">
+          <h2>Add Task</h2>
+          <label>Section:
+            <select id="taskSection">
+              <option value="absent">Absent</option>
+              <option value="assign">Assignments</option>
+              <option value="study">Study</option>
+              <option value="health">Health</option>
+            </select>
+          </label>
+
+          <label>Task text:
+            <input id="taskText" placeholder="e.g. CS lab HW 2" />
+          </label>
+
+          <label>Due date (optional):
+            <input id="taskDate" type="date" />
+          </label>
+
+          <label>Priority:
+            <select id="taskPriority">
+              <option value="normal">Normal</option>
+              <option value="high">High</option>
+              <option value="low">Low</option>
+            </select>
+          </label>
+
+          <div class="row">
+            <button id="addBtn" class="btn primary">Add Task</button>
+            <button id="clearBtn" class="btn ghost">Clear</button>
+          </div>
+        </section>
+
+        <section class="filter-section">
+          <h3>Filter</h3>
+          <div class="row">
+            <button data-filter="all" class="btn small active">All</button>
+            <button data-filter="active" class="btn small">Active</button>
+            <button data-filter="completed" class="btn small">Completed</button>
+          </div>
+        </section>
+
+        <!-- Simple Study Scheduler -->
+        <section class="scheduler">
+          <h2>Study Scheduler</h2>
+          <label>Subject name:
+            <input id="subName" placeholder="e.g. Data Structures" />
+          </label>
+
+          <label>Number of units/chapters:
+            <input id="units" type="number" min="1" value="5" />
+          </label>
+
+          <label>Start date:
+            <input id="startDate" type="date" />
+          </label>
+
+          <label>End date:
+            <input id="endDate" type="date" />
+          </label>
+
+          <label>Holidays (comma dates YYYY-MM-DD):
+            <input id="holidays" placeholder="2025-12-25,2025-12-31" />
+          </label>
+
+          <div class="row">
+            <button id="makeSchedule" class="btn primary">Create Schedule</button>
+            <button id="clearSchedule" class="btn ghost">Clear</button>
+          </div>
+
+          <p class="hint">This divides units evenly across days between start & end (excluding holidays).</p>
+        </section>
+      </aside>
+
+      <!-- RIGHT: task list -->
+      <section class="panel right">
+        <h2 id="panelTitle">Tasks</h2>
+        <ul id="taskList" class="task-list"></ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Made for Anna University student — simple, offline, and easy to customise.</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
